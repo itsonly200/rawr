@@ -38,20 +38,36 @@ export default function RegisterPage() {
   }
 
   return (
-    <main style={{ maxWidth: 400, margin: "80px auto", padding: "0 1rem" }}>
-      <h1>Create account</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <input name="name" type="text" placeholder="Name (optional)" />
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="password" type="password" placeholder="Password" required />
-        <button type="submit" disabled={loading}>
-          {loading ? "Creating account..." : "Register"}
-        </button>
-      </form>
-      <p>
-        Already have an account? <Link href="/login">Log in</Link>
-      </p>
-    </main>
+    <>
+      <div className="header-bar">
+        <Link href="/" className="logo">rawr</Link>
+      </div>
+      <div className="auth-box">
+        <div className="auth-box-header">Create Account</div>
+        <div className="auth-box-body">
+          {error && <p className="error-msg">{error}</p>}
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input id="name" name="name" type="text" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password:</label>
+              <input id="password" name="password" type="password" required />
+            </div>
+            <button type="submit" className="btn btn-primary" disabled={loading}>
+              {loading ? "Creating account..." : "Register"}
+            </button>
+          </form>
+          <p className="form-footer">
+            Already have an account? <Link href="/login">Log in</Link>
+          </p>
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,3 +1,309 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Early 2000s Facebook ("TheFacebook") inspired styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  font-size: 13px;
+  color: #333;
+  background-color: #d8dfea;
+}
+
+a {
+  color: #3b5998;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header / nav bar */
+.header-bar {
+  background-color: #3b5998;
+  border-bottom: 1px solid #29487d;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-bar .logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.header-bar .logo:hover {
+  text-decoration: none;
+}
+
+.header-bar .user-info {
+  color: #d8dfea;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-bar .user-info strong {
+  color: #fff;
+}
+
+/* Content box */
+.content-box {
+  background: #fff;
+  border: 1px solid #9aabe5;
+  padding: 16px;
+  margin: 16px;
+}
+
+.content-box h2 {
+  font-size: 14px;
+  color: #3b5998;
+  border-bottom: 1px solid #d8dfea;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+/* Page container */
+.page-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Header login form — all horizontal */
+.header-login {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-login label {
+  color: #d8dfea;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.header-login input {
+  width: 140px;
+  padding: 3px 5px;
+  font-size: 12px;
+  border: 1px solid #1d3d6f;
+}
+
+.btn-login {
+  background: #d8dfea;
+  color: #3b5998;
+  border-color: #29487d;
+  white-space: nowrap;
+}
+
+.btn-login:hover {
+  background: #eef0f5;
+}
+
+/* Splash page layout */
+.splash-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.splash-left {
+  flex: 1;
+  padding-top: 10px;
+}
+
+.splash-left h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  color: #3b5998;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.splash-tagline {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.splash-image {
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #9aabe5;
+}
+
+.splash-right {
+  flex: 0 0 340px;
+  background: #fff;
+  border: 1px solid #9aabe5;
+  padding: 20px;
+}
+
+.signup-heading {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.signup-subtext {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 6px 15px;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* Auth form box (login/register standalone pages) */
+.auth-box {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border: 1px solid #9aabe5;
+}
+
+.auth-box-header {
+  background: #3b5998;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.auth-box-body {
+  padding: 16px;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 5px 6px;
+  font-size: 13px;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  border: 1px solid #bdc7d8;
+  background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #3b5998;
+  outline: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #5b74a8;
+  color: #fff;
+  border-color: #29447e;
+}
+
+.btn-primary:hover {
+  background: #4a6599;
+}
+
+.btn-primary:disabled {
+  background: #8fa4ce;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #3b5998;
+  border-color: #9aabe5;
+}
+
+.btn-secondary:hover {
+  background: #f0f2f8;
+}
+
+.btn-small {
+  padding: 3px 10px;
+  font-size: 11px;
+}
+
+/* Error message */
+.error-msg {
+  color: #cc0000;
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding: 6px 8px;
+  background: #ffebe8;
+  border: 1px solid #dd3c10;
+}
+
+/* Footer text under forms */
+.form-footer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #666;
+}
+
+.form-footer a {
+  color: #3b5998;
+}
+
+/* Dashboard */
+.dashboard-content {
+  padding: 16px;
+}
+
+.dashboard-content h2 {
+  font-size: 14px;
+  color: #3b5998;
+  margin-bottom: 8px;
+}
+
+.dashboard-content p {
+  margin-bottom: 10px;
+}

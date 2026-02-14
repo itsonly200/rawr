@@ -37,19 +37,32 @@ export default function LoginPage() {
   }
 
   return (
-    <main style={{ maxWidth: 400, margin: "80px auto", padding: "0 1rem" }}>
-      <h1>Log in</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="password" type="password" placeholder="Password" required />
-        <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Log in"}
-        </button>
-      </form>
-      <p>
-        No account? <Link href="/register">Register</Link>
-      </p>
-    </main>
+    <>
+      <div className="header-bar">
+        <Link href="/" className="logo">rawr</Link>
+      </div>
+      <div className="auth-box">
+        <div className="auth-box-header">Log In</div>
+        <div className="auth-box-body">
+          {error && <p className="error-msg">{error}</p>}
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password:</label>
+              <input id="password" name="password" type="password" required />
+            </div>
+            <button type="submit" className="btn btn-primary" disabled={loading}>
+              {loading ? "Logging in..." : "Log In"}
+            </button>
+          </form>
+          <p className="form-footer">
+            No account? <Link href="/register">Register</Link>
+          </p>
+        </div>
+      </div>
+    </>
   );
 }
